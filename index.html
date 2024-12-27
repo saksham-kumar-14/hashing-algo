@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hashing</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <input id="reg-username" type="text" placeholder="Username">
+    <div class="input-container">
+      <input id="reg-pwd" type="password" placeholder="Password">
+      <button class="reg-show-pwd">
+        <img id="reg-show-pwd-img" src="./assets/eye-close.svg" alt="">
+      </button>
+    </div>
+    <div class="input-container">
+      <input id="reg-cfm-pwd" type="password" placeholder="Comfirm Password">
+      <button class="reg-show-cnf-pwd">
+        <img id="reg-show-cnf-pwd-img" src="./assets/eye-close.svg" alt="">
+      </button>
+    </div>
+    <button id="reg-btn">Submit</button>
+  </div>
+
+  <div class="container">
+    <h2>Login</h2>
+    <input id="login-username" type="text" placeholder="username">
+    <div class="input-container">
+      <input id="login-pwd" type="password" placeholder="password">
+      <button class="login-show-pwd">
+        <img id="login-show-pwd-img" src="./assets/eye-close.svg" alt="">
+      </button>
+    </div>
+    <button id="login-btn">Submit</button>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script type="module" src="script.js"></script>
+</html>
