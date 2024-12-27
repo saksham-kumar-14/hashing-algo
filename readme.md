@@ -1,1 +1,1 @@
-# SHA-256 working
+hosted [here](https://saksham-kumar-14.github.io/hashing-alg)
