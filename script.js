@@ -17,8 +17,25 @@ const regShowCnfPwdImg = document.getElementById('reg-show-cnf-pwd-img');
 const loginShowPwdImg = document.getElementById('login-show-pwd-img');
 
 function handleHash(pwd){
-    const hash = CryptoJS.SHA256(pwd).toString(CryptoJS.enc.Hex);
-    return hash;
+    let hash = 0;
+    const prime = 0xcc9e2d51; // A prime constant to void collisions
+
+    for (let i = 0; i < pwd.length; i++) {
+        let char = pwd.charCodeAt(i);
+        char = (char * prime) & 0xffffffff;
+        char = (char << 15) | (char >>> 17);
+        hash ^= char;
+        hash = (hash * 0x1b873593) & 0xffffffff;
+    }
+
+    hash ^= pwd.length;
+    hash ^= hash >>> 16;
+    hash = (hash * 0x85ebca6b) & 0xffffffff;
+    hash ^= hash >>> 13;
+    hash = (hash * 0xc2b2ae35) & 0xffffffff;
+    hash ^= hash >>> 16;
+
+    return hash >>> 0;
 }
 
 function regUser(){
